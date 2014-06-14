@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		906A2500184FC3D900160533 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 906A24FE184FC3D900160533 /* InfoPlist.strings */; };
 		906A2503184FC3D900160533 /* Driver_PL2303.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 906A2502184FC3D900160533 /* Driver_PL2303.cpp */; };
 /* End PBXBuildFile section */
 
@@ -15,10 +14,8 @@
 		906A24F6184FC3D900160533 /* Driver PL2303.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Driver PL2303.kext"; sourceTree = BUILT_PRODUCTS_DIR; };
 		906A24FA184FC3D900160533 /* Kernel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kernel.framework; path = System/Library/Frameworks/Kernel.framework; sourceTree = SDKROOT; };
 		906A24FD184FC3D900160533 /* Driver PL2303-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Driver PL2303-Info.plist"; sourceTree = "<group>"; };
-		906A24FF184FC3D900160533 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		906A2501184FC3D900160533 /* Driver_PL2303.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Driver_PL2303.h; sourceTree = "<group>"; };
 		906A2502184FC3D900160533 /* Driver_PL2303.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Driver_PL2303.cpp; sourceTree = "<group>"; };
-		906A2504184FC3D900160533 /* Driver PL2303-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Driver PL2303-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +76,6 @@
 			isa = PBXGroup;
 			children = (
 				906A24FD184FC3D900160533 /* Driver PL2303-Info.plist */,
-				906A24FE184FC3D900160533 /* InfoPlist.strings */,
-				906A2504184FC3D900160533 /* Driver PL2303-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -148,7 +143,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				906A2500184FC3D900160533 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,17 +169,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		906A24FE184FC3D900160533 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				906A24FF184FC3D900160533 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		906A2505184FC3D900160533 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -203,6 +186,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -219,8 +203,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.9;
 			};
 			name = Debug;
 		};
@@ -251,20 +234,19 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.9;
 			};
 			name = Release;
 		};
 		906A2508184FC3D900160533 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1.0.0d1;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Driver PL2303/Driver PL2303-Prefix.pch";
 				INFOPLIST_FILE = "Driver PL2303/Driver PL2303-Info.plist";
+				INSTALL_GROUP = wheel;
+				INSTALL_OWNER = root;
 				MODULE_NAME = NoZAP.Driver_PL2303;
 				MODULE_VERSION = 1.0.0d1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -275,13 +257,12 @@
 		906A2509184FC3D900160533 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1.0.0d1;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Driver PL2303/Driver PL2303-Prefix.pch";
 				INFOPLIST_FILE = "Driver PL2303/Driver PL2303-Info.plist";
+				INSTALL_GROUP = wheel;
+				INSTALL_OWNER = root;
 				MODULE_NAME = NoZAP.Driver_PL2303;
 				MODULE_VERSION = 1.0.0d1;
 				ONLY_ACTIVE_ARCH = YES;
